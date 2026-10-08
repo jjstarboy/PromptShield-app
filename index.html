@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PromptShield: AI Chatbot Security Checkup</title>
+<link rel="stylesheet" href="app.css"></head>
+<body><div id="app">
+<nav><h1>Prompt<span>Shield</span></h1><small>No signup needed. History stays private in this browser.</small>
+<button data-p="dash">🏠 Dashboard</button><button data-p="aud">🤝 Client Audit</button><button data-p="setup">⚙️ Setup</button><button data-p="report">📊 Report</button><button data-p="fix">🔧 Fix</button><button data-p="bt">🗄️ Backend Test</button><button data-p="lib">📚 Attack Library</button><button data-p="exp">⬇️ Exports &amp; Logs</button><button data-p="legal">⚖️ Legal</button></nav>
+<main>
+<div id="ai" class="card err" hidden>AI connection is unavailable in this view, so tests cannot run here.</div>
+<section class="pg" id="p-dash"></section>
+<section class="pg" id="p-aud"></section>
+<section class="pg" id="p-setup">
+<div class="card"><h2>Setup</h2>
+<label for="nm">Test name (optional)</label><input type="text" id="nm" placeholder="e.g. Bank bot v1">
+<label for="sp">System prompt to test</label><textarea id="sp"></textarea><div class="err" id="e1"></div>
+<label for="sec">Protected secret (use fake data only)</label>
+<div class="row" style="margin:0"><input type="password" id="sec" placeholder="fake API key: sk-EXAMPLE-123" style="flex:1"><button class="alt sm" id="rev">Reveal</button></div><div class="err" id="e2"></div>
+<label class="i"><input type="checkbox" id="cons"> I confirm I own or am authorized to test this chatbot and accept responsibility for this activity.</label>
+<div class="row"><button id="run" disabled>Run security test</button><button class="alt" id="weak">Load sample weak prompt</button></div>
+<p class="note">Use only on chatbots you own or are authorized to test. PromptShield runs simulated attacks and sends no traffic to third parties. The secret is only used inside the tests.</p></div></section>
+<section class="pg" id="p-report"></section>
+<section class="pg" id="p-fix"></section>
+<section class="pg" id="p-bt"></section>
+<section class="pg" id="p-lib"></section>
+<section class="pg" id="p-exp"></section>
+<section class="pg" id="p-legal"></section>
+</main></div>
+<div class="card" style="max-width:1060px;margin:0 auto 16px"><button class="alt sm" id="chk">Check AI connection</button> <span class="note" id="chk-out"></span></div>
+<script src="shim.js"></script>
+<script src="app.js"></script>
+<script src="check.js"></script></body></html>
